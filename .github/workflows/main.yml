@@ -12,7 +12,7 @@ jobs:
             echo "Hello from Seong Ping"
             sleep 30
         - name: step2 for testing
-          run: 
+          run: |
             cat /etc/os-release
             sleep 30
 # name is not importenat in step
