@@ -2,10 +2,15 @@
 
 name : workflow1
 on: 
-   push
+   push:
 jobs:
   job1:
     runs-on: ubuntu-latest #ubuntu Linux machine provided by GitHub
     steps:
         - name: step1
           run: echo "Hello from Seong Ping"
+        - name: my step2
+          run: cat /etc/os-release
+
+# name is not importenat in step
+        - run: uname -a
