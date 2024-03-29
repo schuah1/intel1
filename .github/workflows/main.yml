@@ -16,5 +16,5 @@ jobs:
           run: |
             cat /etc/os-release
             sleep 30
-# name is not importenat in step
+# name is not important in step
         - run: uname -a
