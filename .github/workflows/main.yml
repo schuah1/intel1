@@ -12,7 +12,7 @@ jobs:
     steps:
         - name: step1
           run: | 
-            echo "$greetings from $name" - $name creted this file"
+            echo "$greetings from $name - $name created this file"
           env:
               name: Seong Ping
         - name: step2 for testing
@@ -33,7 +33,7 @@ jobs:
     steps:
         - name: step1
           run: | 
-            echo "$greetings from $name $lastname" - $name created this file"
+            echo "$greetings from $name $lastname - $name created this file"
           env:
               name: Seong Ping
         - name: step2 for testing
