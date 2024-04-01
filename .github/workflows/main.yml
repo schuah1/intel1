@@ -10,13 +10,14 @@ jobs:
     steps:
         - name: step1
           run: | 
-            echo "Hello from Seong Ping"
-            sleep 30
+            echo "Hello from $name"
+            env:
+              name : Seong Ping
         - name: step2 for testing
           run: |
             cat /etc/os-release
             hostname
             touch /tmp/SeongPingfolder1
-            sleep 30
+            
 # name is not important in step
         - run: uname -a
