@@ -33,14 +33,14 @@ jobs:
     steps:
         - name: step1
           run: | 
-            echo "$greetings | from $name $lastname" - $name created this file"
+            echo "$greetings from $name $lastname" - $name created this file"
           env:
               name: Seong Ping
         - name: step2 for testing
           run: |
             cat /etc/os-release
             hostname
-            echo "$greetings | from $name"
+            echo "$greetings from $name"
             touch /tmp/SeongPingfolder1
             
 # name is not important in step
