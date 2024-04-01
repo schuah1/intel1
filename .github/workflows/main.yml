@@ -6,7 +6,7 @@ on:
    push:
 jobs:
   job1:
-    runs-on: ubuntu-20.04 #ubuntu Linux machine provided by GitHub
+    runs-on: self-hosted #ubuntu-20.04 #ubuntu Linux machine provided by GitHub
     steps:
         - name: step1
           run: | 
@@ -15,6 +15,8 @@ jobs:
         - name: step2 for testing
           run: |
             cat /etc/os-release
+            hostname
+            touch /tmp/SeongPingfolder1
             sleep 30
 # name is not important in step
         - run: uname -a
