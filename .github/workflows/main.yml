@@ -43,5 +43,3 @@ jobs:
             echo "$greetings from $name"
             touch /tmp/SeongPingfolder1
             
-# name is not important in step
-        - run: uname -a
