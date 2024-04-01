@@ -7,16 +7,40 @@ on:
 jobs:
   job1:
     runs-on: self-hosted #ubuntu-20.04 #ubuntu Linux machine provided by GitHub
+    env:
+       greetings : "hello"
     steps:
         - name: step1
           run: | 
-            echo "Hello from $name"
+            echo "$greetings | from $name" - $name creted this file"
           env:
               name: Seong Ping
         - name: step2 for testing
           run: |
             cat /etc/os-release
             hostname
+            echo "$greetings | from $name"
+            touch /tmp/SeongPingfolder1
+            
+# name is not important in step
+        - run: uname -a
+
+
+job2:
+    runs-on: ubuntu-20.04 #ubuntu Linux machine provided by GitHub
+    env:
+       lastname : "Chuah"
+    steps:
+        - name: step1
+          run: | 
+            echo "$greetings | from $name $lastname" - $name created this file"
+          env:
+              name: Seong Ping
+        - name: step2 for testing
+          run: |
+            cat /etc/os-release
+            hostname
+            echo "$greetings | from $name"
             touch /tmp/SeongPingfolder1
             
 # name is not important in step
