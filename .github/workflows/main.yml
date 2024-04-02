@@ -16,7 +16,7 @@ jobs:
     steps:
         - name: step1
           run: | 
-            echo "$greetings from $name - $name created this file"
+            echo "$greetings from $name - $name created this file under repo ${{ GITHUB.REPOSITORY}} and its runningon OS ${{RUNNER_OS}}"          
           env:
               name: Seong Ping
               greetings: "Hi"
