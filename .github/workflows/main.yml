@@ -4,9 +4,13 @@ name : workflow1
 on: 
    workflow_dispatch:
    push:
+env:
+   greetings: "Good Morning"
+   name: "Mark"
+   lastname: "chuah"
 jobs:
   job1:
-    runs-on: self-hosted #ubuntu-20.04 #ubuntu Linux machine provided by GitHub
+    runs-on: ubuntu-latest #ubuntu-20.04 #ubuntu Linux machine provided by GitHub
     env:
        greetings : "hello"
     steps:
@@ -15,6 +19,7 @@ jobs:
             echo "$greetings from $name - $name created this file"
           env:
               name: Seong Ping
+              greetings: "Hi"
         - name: step2 for testing
           run: |
             cat /etc/os-release
