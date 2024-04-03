@@ -35,10 +35,37 @@ jobs:
 # name is not important in step
         - run: uname -a
 
-
+  test:
+      runs-on: ubuntu-latest
+      continue-on-error: true
+      environment: prod
+      needs: build
+      env:
+        lastname: "Chuah"
+      steps: 
+        - name: step1
+          run: |
+            echo "$greetings ! from $name $lastname . $name created this file"
+            echo Application name is ${{ vars.APP_NAME }}
+            echo " ${{ vars.APP_NAME }} is hosted on ${{ vars.SERVER_NAME }}"
+            sleep 5
+  stage:
+    runs-on: ubuntu-latest
+    environment: prod
+    needs: test
+    env:
+      lastname: "Chuah"
+    steps: 
+     - name: step1
+       run: |
+          echo "$greetings ! from $name $lastname. $name created this file"
+          echo " ${{ vars.APP_NAME }} is hosted on ${{ vars.SERVER_NAME }} "
+          sleep 10
+          
   deploy:
     runs-on: ubuntu-latest #ubuntu Linux machine provided by GitHub
     environment: prod
+    needs: test
     env:
        lastname : "Chuah"
     steps:
@@ -57,16 +84,4 @@ jobs:
             echo "$greetings from $name"
             touch /tmp/SeongPingfolder1
 
-  test:
-      runs-on: ubuntu-latest
-      environment: test
-      env:
-        lastname: "Chuah"
-      steps: 
-        - name: step1
-          run: |
-            echo "$greetings ! from $name $lastname . $name created this file"
-            echo Application name is ${{ vars.APP_NAME }}
-            echo " ${{ vars.APP_NAME }} is hosted on ${{ vars.SERVER_NAME }}"
-            sleep 5
             
